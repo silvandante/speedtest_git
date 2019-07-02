@@ -18,21 +18,33 @@
     }
     exit();
   }
-
-   if (isset($_GET['tabela'])) {
-     try {
-        $queryConnetions = $pdo->query("SELECT * FROM isp_ip_name_table");
-        $json = [];
-        while($connection = $queryConnetions->fetch(PDO::FETCH_ASSOC)){
-             $json = array( $connection );
+function utf8ize($d) {
+    if (is_array($d)) {
+        foreach ($d as $k => $v) {
+            $d[$k] = utf8ize($v);
         }
+    } else if (is_string ($d)) {
+        return utf8_encode($d);
+    }
+    return $d;
+}
 
-        echo json_encode($json);
-      }catch(Exception $e) {
-        echo 'alert(Exception -> )'.$e->getMessage();
+    if (isset($_GET['tabela'])) {
+    try {
+      $qryLista_ = $pdo->query("SELECT * FROM isp_ip_name_table");    
 
-      }
-      exit();
+      while($resultado = $qryLista_->fetch(PDO::FETCH_ASSOC)){
+          $vetor[] = $resultado; 
+      }    
+
+      //echo json_encode($vetor);
+      echo json_encode(utf8ize($vetor));
+
+    }catch(Exception $e) {
+      echo 'alert(Exception -> )'.$e->getMessage();
+
+    }
+    exit();
    }
 
 
