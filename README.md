@@ -14,14 +14,19 @@ DIAGRAMA DE CLASSE
 
 CONFIGURAÇÕES
 ![alt text](https://github.com/silvandante/speedtest_git/blob/master/dash.png)
+
 Na tela “index.php” o usuário encontra as 3 opções de configuração do Speedtest assim como a visualização da configuração atual.
 
 CONEXÕES
 ![alt text](https://github.com/silvandante/speedtest_git/blob/master/list.png)
+
 Na tela “conexoes.php” o usuário pode gerenciar as conexões mudando o nome ou o pacote do serviço contratado.
 
 RELATÓRIO
 ![alt text](https://github.com/silvandante/speedtest_git/blob/master/relatorio.png)
+
 Na tela “charts.php” o usuário pode gerenciar os relatórios para cada conexão. Para isso basta selecionar a conexão desejada e opções de relatório desejadas e clicar em “gerar” que a tela abaixo surgirá:
+
 ![alt text](https://github.com/silvandante/speedtest_git/blob/master/chart.png)
+
 E ao clicar no botão “Download PDF” o usuário é encaminhado para um .pdf do relatório gerado que pode ser baixado e guardado.
